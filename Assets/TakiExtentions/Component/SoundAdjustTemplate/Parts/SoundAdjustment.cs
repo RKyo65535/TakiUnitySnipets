@@ -7,13 +7,16 @@ namespace Assets.TakiExtension.SoundAdjustment
 {
     public class SoundAdjustment : MonoBehaviour
     {
+        // オーディオミキサー関連の変数。
         [SerializeField] AudioMixer mixer;
         [SerializeField] string mixerParameter_BGMVolume;
         [SerializeField] string mixerParameter_SEVolume;
 
+        // サウンド調整用のスライダー
         [SerializeField] Slider BGMSlider;
         [SerializeField] Slider SESlider;
-        [SerializeField,] AudioSource SETestAudio;
+        // サウンドの音量が変わった時用に再生するオーディオ
+        [SerializeField] AudioSource SETestAudio;
 
         private void Awake()
         {
@@ -21,7 +24,7 @@ namespace Assets.TakiExtension.SoundAdjustment
             SESlider.onValueChanged.AddListener(SEChanged);
 
             //ここ修正ポイント、値が変わるたびに何回も何回も鳴る
-            SESlider. onValueChanged.AddListener(_ =>
+            SESlider.onValueChanged.AddListener(_ =>
             {
                 SETestAudio?.Play();
             });
@@ -31,12 +34,12 @@ namespace Assets.TakiExtension.SoundAdjustment
         void BGMChanged(float slider)
         {
 
-            mixer.SetFloat("BGMVolume", Liner2dB(slider));
+            mixer.SetFloat(mixerParameter_BGMVolume, Liner2dB(slider));
         }
 
         void SEChanged(float slider)
         {
-            mixer.SetFloat("SEVolume", Liner2dB(slider));
+            mixer.SetFloat( mixerParameter_SEVolume, Liner2dB(slider));
 
         }
 
