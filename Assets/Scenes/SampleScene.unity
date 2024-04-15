@@ -406,6 +406,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3548075036522768007, guid: cba74ec251964cb489f36d57bd8289bf, type: 3}
+      propertyPath: SETestAudio
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3548075036522768007, guid: cba74ec251964cb489f36d57bd8289bf, type: 3}
+      propertyPath: sampleSoundSpan
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3938968896139616434, guid: cba74ec251964cb489f36d57bd8289bf, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
