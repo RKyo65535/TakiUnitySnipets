@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -17,6 +18,8 @@ namespace Assets.TakiExtension.SoundAdjustment
         [SerializeField] Slider SESlider;
         // サウンドの音量が変わった時用に再生するオーディオ
         [SerializeField] AudioSource SETestAudio;
+        [SerializeField] private float sampleSoundSpan;
+        private float time;
 
         private void Awake()
         {
@@ -26,8 +29,17 @@ namespace Assets.TakiExtension.SoundAdjustment
             //ここ修正ポイント、値が変わるたびに何回も何回も鳴る
             SESlider.onValueChanged.AddListener(_ =>
             {
-                SETestAudio?.Play();
+                if (time > sampleSoundSpan)
+                {
+                    SETestAudio?.Play();
+                    time = 0;
+                }
             });
+        }
+
+        private void Update()
+        {
+            time += Time.deltaTime;
         }
 
 
@@ -39,7 +51,7 @@ namespace Assets.TakiExtension.SoundAdjustment
 
         void SEChanged(float slider)
         {
-            mixer.SetFloat( mixerParameter_SEVolume, Liner2dB(slider));
+           // mixer.SetFloat( mixerParameter_SEVolume, Liner2dB(slider));
 
         }
 

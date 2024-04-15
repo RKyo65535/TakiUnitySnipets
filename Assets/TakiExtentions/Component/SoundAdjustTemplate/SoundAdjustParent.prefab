@@ -56,6 +56,7 @@ MonoBehaviour:
   BGMSlider: {fileID: 6188716361524558835}
   SESlider: {fileID: 1121309037006853697}
   SETestAudio: {fileID: 0}
+  sampleSoundSpan: 0.2
 --- !u!1001 &84988703222262410
 PrefabInstance:
   m_ObjectHideFlags: 0
