@@ -1,0 +1,17 @@
+{
+  "name": "com.takigames",
+  "displayName": "Taki Unity Smipets",
+  "version": "1.0.0",
+  "unity": "2022.3.18",
+  "description": "Taki functions",
+  "author": {
+    "name": "taki",
+    "url": "https://github.com/RKyo65535/TakiUnitySnipets"
+  },
+  "keywords": [
+    "Taki"
+  ],
+  "dependencies": {
+    "com.unity.render-pipelines.universal": "12.1.6"
+  }
+}
