@@ -10,3 +10,6 @@
 * 既存クラスの拡張
 * unity1weekなどでよく作るテンプレート的な機能
 みたいなのを追加していければなぁと思います。
+
+# UPM
+`https://github.com/RKyo65535/TakiUnitySnipets.git?path=Assets/TakiExtentions`
